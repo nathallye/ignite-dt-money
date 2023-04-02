@@ -53,6 +53,7 @@ export const defaultTheme = {
     "green-500": "#00875F",
     "green-700": "#015F43",
 
+    "red-300": "#F75A68",
     "red-500": "#AB222E",
     "red-700": "#7A1921",
 
@@ -64,35 +65,19 @@ export const defaultTheme = {
 
 ``` TSX
 import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "./styles/themes/default";
 
-import { Button } from "./components/Button/Button";
+import { defaultTheme } from "./styles/themes/default";
 
 export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Button />
+      <h1>Hello!</h1>
     </ThemeProvider>
-  );
+  )
 };
 ```
 
-- Feito isso, conseguimos acessar esse tema via props:
-
-``` TSX
-import styled from "styled-components";
-
-export const ButtonContainer = styled.button`
-  width: 100px;
-  height: 40px;
-  border-radius: 4px;
-  border: 0;
-  margin: 8px;
-
-  background-color: ${props => props.theme["green-500"]};
-  color: ${props => props.theme.white};
-`;
-```
+- Feito isso, conseguimos acessar esse tema via props.
 
 #### Tipagem de temas
 
@@ -100,6 +85,7 @@ export const ButtonContainer = styled.button`
 
 ``` TS
 import "styled-components";
+
 import { defaultTheme } from "../styles/themes/default";
 
 type ThemeType = typeof defaultTheme; // pegando o tipo que o TS já infere
@@ -129,8 +115,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme["gray-900"]};
-    color: ${props => props.theme["gray-300"]};
+    background: ${props => props.theme["gray-800"]};
+    color: ${props => props.theme["gray-100"]};
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
@@ -145,17 +132,17 @@ export const GlobalStyle = createGlobalStyle`
 
 ``` TSX
 import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "./styles/themes/default";
 
+import { defaultTheme } from "./styles/themes/default";
 import { GlobalStyle } from "./styles/global";
-import { Button } from "./components/Button/Button";
 
 export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Button />
+
+      <h1>Hello!</h1>
     </ThemeProvider>
-  );
+  )
 };
 ```
