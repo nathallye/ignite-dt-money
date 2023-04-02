@@ -1,7 +1,7 @@
 # DT Money
 
 <div align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/86172286/222938829-9bf81af1-2b92-4efd-b08f-68217c935f6d.gif">
+  <img width="700" src="">
 </div>
 
 ## Criando um projeto React com o Vite
