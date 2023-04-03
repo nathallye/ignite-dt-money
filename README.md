@@ -146,3 +146,11 @@ export const App = () => {
   )
 };
 ```
+
+## Phorsphor React
+
+- Vamos usar a biblioteca de icons Phorsphor React e para isso vamos instalar ela executando o comando seguinte:
+
+```
+npm i phosphor-react
+```
