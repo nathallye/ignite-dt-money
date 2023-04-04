@@ -156,3 +156,15 @@ Link documentação: https://phosphoricons.com/;
 ```
 > npm i phosphor-react
 ```
+
+## Radix UI
+
+Componentes acessíveis e sem estilo para criar sistemas de design e aplicativos da web de alta qualidade em React.
+
+Link documentação: https://phosphoricons.com/;
+
+- Vamos usar o Radix UI para criar componentes acessíveis. Para isso vamos instalar o componente desejado executando o comando seguinte:
+
+```
+> npm install @radix-ui/react-dialog
+```
