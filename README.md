@@ -168,3 +168,49 @@ Link documentação: https://phosphoricons.com/;
 ```
 > npm install @radix-ui/react-dialog
 ```
+
+## API
+
+### JSON Server
+
+Obtenha uma API REST falsa completa com codificação zero em menos de 30 segundos (sério).
+Criado para desenvolvedores de front-end que precisam de um back-end rápido para prototipagem e mocking.
+
+- Vamos usar o API Server para criar o back-end, para isso vamos instalar ultizando comando seguinte:
+
+```
+> npm install json-server -D
+```
+
+- Em seguida, na raiz do projeto vamos criar um arquivo chamdo `server.json` com as entidades da aplicação:
+
+``` JSON
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2022-07-29T19:36:44.505Z"
+    },
+    {
+      "id": 2,
+      "description": "Hambúrguer",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2022-07-29T19:30:44.505Z"
+    }
+  ]
+}
+```
+
+- Iniciar servidor JSON:
+
+``` JSON
+> npx json-server server.json --watch - D 
+ou
+> npm run dev:server 
+```
