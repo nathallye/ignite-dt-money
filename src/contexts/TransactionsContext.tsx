@@ -19,7 +19,7 @@ interface TransactionsProvideType {
 
 export const TransactionsContext = createContext({} as TransactionsContextType);
 
-export function TransactionsProvider({ children } : TransactionsProvideType) {
+export const TransactionsProvider = ({ children } : TransactionsProvideType) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   async function loadTransactions() {
