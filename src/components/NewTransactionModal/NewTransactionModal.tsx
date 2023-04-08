@@ -77,7 +77,8 @@ export const NewTransactionModal = () => {
               return (
                 <TransactionType 
                   onValueChange={field.onChange}
-                  value={field.value}>
+                  value={field.value}
+                >
                   <TransactionTypeButton variant="income" value="income">
                     <ArrowCircleUp size={24} />
                     Entrada
