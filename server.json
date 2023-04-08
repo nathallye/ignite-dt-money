@@ -2,18 +2,18 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Desenvolvimento de site",
+      "description": "Salário",
       "type": "income",
-      "category": "Venda",
-      "price": 14000,
+      "category": "Salary",
+      "price": 1900,
       "createdAt": "2022-07-29T19:36:44.505Z"
     },
     {
       "id": 2,
-      "description": "Hambúrguer",
+      "description": "Cartão de crédito",
       "type": "outcome",
-      "category": "Alimentação",
-      "price": 50,
+      "category": "Card",
+      "price": 900,
       "createdAt": "2022-07-29T19:30:44.505Z"
     }
   ]
