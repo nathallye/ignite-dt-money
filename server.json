@@ -2,9 +2,9 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Salário",
+      "description": "Salário Avanade",
       "type": "income",
-      "category": "Salary",
+      "category": "Salário",
       "price": 1900,
       "createdAt": "2022-07-29T19:36:44.505Z"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "description": "Cartão de crédito",
       "type": "outcome",
-      "category": "Card",
+      "category": "Diversos",
       "price": 900,
       "createdAt": "2022-07-29T19:30:44.505Z"
     }
