@@ -214,3 +214,155 @@ Criado para desenvolvedores de front-end que precisam de um back-end rápido par
 ou
 > npm run dev:server 
 ```
+
+## React Hook Form
+
+Documentação: https://react-hook-form.com/.
+
+**Controlled x Uncontrolled**
+
+- `Controlled`: matemos em tempo real a informação do input do usuário, guardado no estado, toda vez que uma alteração é feita o React irá recalcular todo conteúdo do componente do estado que mudou.
+
+- `Uncontrolled`: buscamos a informação do input, somente quando precisarmos dela, sem controle de estado, usando as próprias funções JS.
+
+- Vamos instalar o React Hook Form com o comando seguinte:
+
+```
+npm i react-hook-form
+```
+
+- Usando o React Hook Form:
+
+``` TSX
+import { MagnifyingGlass } from "phosphor-react";
+import { useForm } from "react-hook-form";
+
+import { SearchFormContainer } from "./styles";
+
+export const SearchForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
+
+  const searchTransactionsHandler = (data) => {};
+
+  return (
+    <SearchFormContainer onSubmit={handleSubmit(searchTransactionsHandler)}>
+      <input
+        type="text"
+        placeholder="Busque por transações"
+        {...register("query")}
+      />
+      <button type="submit" disabled={isSubmitting}>
+        <MagnifyingGlass size={20} />
+        Buscar
+      </button>
+    </SearchFormContainer>
+  );
+};
+```
+
+### Biblioteca de validação de forms - Zod
+
+Documentação: https://github.com/colinhacks/zod.
+
+- Vamos rodar o comando seguinte para instalar e integrar o Zod ao React Hook Form:
+
+```
+npm i zod
+npm i @hookform/resolvers
+```
+
+- Usando o Zod intregado ao React Hook Form para validar forms:
+
+``` TSX
+import { MagnifyingGlass } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import * as zod from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { SearchFormContainer } from "./styles";
+
+const searchFormSchema = zod.object({
+  query: zod.string(),
+});
+
+export const SearchForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm({
+    resolver: zodResolver(searchFormSchema),
+  });
+
+  const searchTransactionsHandler = (data) => {};
+
+  return (
+    <SearchFormContainer onSubmit={handleSubmit(searchTransactionsHandler)}>
+      <input
+        type="text"
+        placeholder="Busque por transações"
+        {...register("query")}
+      />
+      <button type="submit" disabled={isSubmitting}>
+        <MagnifyingGlass size={20} />
+        Buscar
+      </button>
+    </SearchFormContainer>
+  );
+};
+```
+
+### TypeScript no Formulário com Zod
+
+- Vamos usar o Zod para facilitar a passagem de valores padrão para o form:
+
+**Obs.:**
+
+`Interface` x `Type`: Interface - quando criamos um tipo do zero; Type quando criamos uma tipagem a partir de outra já existente.
+
+Toda vez que precisamos utilizar uma variável JS dentro do TS precisamos converter em uma tipagem(algo específico do TS) com o `typeof`(antes dela) para que ele consiga entender.
+
+``` TSX
+import { MagnifyingGlass } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import * as zod from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { SearchFormContainer } from "./styles";
+
+const searchFormSchema = zod.object({
+  query: zod.string(),
+});
+
+type SearchFormInputs = zod.infer<typeof searchFormSchema>;
+
+export const SearchForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SearchFormInputs>({
+    resolver: zodResolver(searchFormSchema),
+  });
+
+  const searchTransactionsHandler = (data: SearchFormInputs) => {};
+
+  return (
+    <SearchFormContainer onSubmit={handleSubmit(searchTransactionsHandler)}>
+      <input
+        type="text"
+        placeholder="Busque por transações"
+        {...register("query")}
+      />
+      <button type="submit" disabled={isSubmitting}>
+        <MagnifyingGlass size={20} />
+        Buscar
+      </button>
+    </SearchFormContainer>
+  );
+};
+```
