@@ -209,7 +209,7 @@ Criado para desenvolvedores de front-end que precisam de um back-end rápido par
 
 - Iniciar servidor JSON:
 
-``` JSON
+```
 > npx json-server server.json --watch - D 
 ou
 > npm run dev:server 
