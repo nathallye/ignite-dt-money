@@ -34,7 +34,7 @@ export const NewTransactionModal = () => {
     }
   });
 
-  async function createNewTransactionHandler(data: NewTransactionFormInputs) {
+const createNewTransactionHandler = async (data: NewTransactionFormInputs) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log(data);
