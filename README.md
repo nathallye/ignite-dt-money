@@ -182,7 +182,7 @@ Criado para desenvolvedores de front-end que precisam de um back-end rápido par
 > npm install json-server -D
 ```
 
-- Em seguida, na raiz do projeto vamos criar um arquivo chamdo `server.json` com as entidades da aplicação:
+- Em seguida, na raiz do projeto vamos criar um arquivo chamado `server.json` com as entidades da aplicação:
 
 ``` JSON
 {
@@ -213,6 +213,28 @@ Criado para desenvolvedores de front-end que precisam de um back-end rápido par
 > npx json-server server.json --watch - D 
 ou
 > npm run dev:server 
+```
+
+### Axios
+
+Axios é um cliente HTTP baseado em Promises para fazer requisições. Pode ser utilizado tanto no navegador quanto no Node.js ou qualquer serviço de API.
+
+Link documentação: https://axios-http.com/ptbr/docs/intro;
+
+- Para utilizar essa biblioteca vamos instalar ultizando comando seguinte:
+
+```
+> npm i axios
+```
+
+- Em seguida, na raiz do projeto vamos criar uma pasta chamada `lib` e dentro dela um arquivo chamado `axios.ts` com a configuração da url aplicação:
+
+``` TS
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL: "http://localhost:3333"
+});
 ```
 
 ## React Hook Form
