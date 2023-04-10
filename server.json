@@ -2,10 +2,10 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Salário Avanade",
+      "description": "Salário",
       "type": "income",
       "category": "Salário",
-      "price": 1900,
+      "price": 2200,
       "createdAt": "2023-03-30T19:36:44.505Z"
     },
     {
@@ -13,48 +13,32 @@
       "description": "Cartão de crédito",
       "type": "outcome",
       "category": "Cartões",
-      "price": 3800,
-      "createdAt": "2023-04-20T19:36:44.505Z"
-    },
-    {
-      "id": 3,
-      "description": "Salário OrçaFascio - Segunda quinzena",
-      "type": "income",
-      "category": "Salário",
-      "price": 7000,
+      "price": 800,
       "createdAt": "2023-04-05T19:36:44.505Z"
     },
     {
-      "id": 4,
+      "id": 3,
       "description": "Aluguel",
       "type": "outcome",
       "category": "Moradia",
-      "price": 3000,
-      "createdAt": "2023-04-21T19:36:44.505Z"
+      "price": 1000,
+      "createdAt": "2023-04-10T19:36:44.505Z"
     },
     {
-      "id": 5,
-      "description": "Salário OrçaFascio - Primeira quinzena",
-      "type": "income",
-      "category": "Salário",
-      "price": 4000,
-      "createdAt": "2023-03-15T19:36:44.505Z"
-    },
-    {
-      "id": 6,
+      "id": 4,
       "description": "Energia",
       "type": "outcome",
       "category": "Moradia",
-      "price": 350,
-      "createdAt": "2023-04-28T19:36:44.505Z"
+      "price": 80,
+      "createdAt": "2023-04-02T19:36:44.505Z"
     },
     {
-      "description": "TESTE",
-      "price": 50,
-      "category": "TESTE",
+      "description": "Água",
+      "price": 70,
+      "category": "Moradia",
       "type": "outcome",
-      "createdAt": "2023-04-09T05:57:14.294Z",
-      "id": 7
+      "createdAt": "2023-04-10T22:14:09.136Z",
+      "id": 5
     }
   ]
 }
