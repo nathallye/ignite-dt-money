@@ -15,7 +15,7 @@ export const SummaryContainer = styled.div`
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    padding-inline: 1.25rem;
+    /* padding-inline: 1.25rem; */
   }
 `;
 
