@@ -11,6 +11,12 @@ export const SummaryContainer = styled.div`
   margin: 0 auto;
   margin-top: -5rem;
   padding: 0 1.5rem;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1.25rem;
+  }
 `;
 
 interface SummaryCardProps {
