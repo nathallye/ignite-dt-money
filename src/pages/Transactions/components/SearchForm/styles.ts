@@ -46,5 +46,9 @@ export const SearchFormContainer = styled.form`
       color: ${props => props.theme["white"]};
       transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     }
+
+    @media (max-width: 600px) {
+      padding-right: 0.5rem;
+    }
   }
 `;
