@@ -65,7 +65,7 @@ export const TransactionsProvider = ({ children }: TransactionsProvideType) => {
 
   useEffect(() => {
     fetchTransactions();
-  }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
+  }, [fetchTransactions]); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
 
   return (
     <TransactionsContext.Provider
