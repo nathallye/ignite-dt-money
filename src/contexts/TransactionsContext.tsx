@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState, useCallback } from "react";
 import { createContext } from "use-context-selector";
 
 import { api } from "../lib/axios";
@@ -34,7 +34,7 @@ export const TransactionsContext = createContext({} as TransactionsContextType);
 export const TransactionsProvider = ({ children }: TransactionsProvideType) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  const fetchTransactions = async (query?: string) => {
+  const fetchTransactions = useCallback(async (query?: string) => { // useCallback - evita que a função seja recriada em memória se nenhuma informação que ela dependa tenha mudado
     const response = await api.get("transactions", {
       params: {
         _sort: "createdAt", // ordena por dada
@@ -44,21 +44,24 @@ export const TransactionsProvider = ({ children }: TransactionsProvideType) => {
     });
 
     setTransactions(response.data);
-  };
+  }, []);
 
-  const createTransaction = async (data: CreateTransactionInput) => {
-    const { description, price, category, type } = data;
+  const createTransaction = useCallback( // useCallback - evita que a função seja recriada em memória se nenhuma informação que ela dependa tenha mudado
+    async (data: CreateTransactionInput) => {
+      const { description, price, category, type } = data;
 
-    const response = await api.post("transactions", {
-      description,
-      price,
-      category,
-      type,
-      createdAt: new Date() // precisa enviar só porque o json server não consegue criar sozinho
-    });
+      const response = await api.post("transactions", {
+        description,
+        price,
+        category,
+        type,
+        createdAt: new Date() // precisa enviar só porque o json server não consegue criar sozinho
+      });
 
-    setTransactions((state) => [response.data, ...state]);
-  };
+      setTransactions((state) => [response.data, ...state]);
+    },
+    []
+  );
 
   useEffect(() => {
     fetchTransactions();
