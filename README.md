@@ -250,7 +250,7 @@ Documentação: https://react-hook-form.com/.
 - Vamos instalar o React Hook Form com o comando seguinte:
 
 ```
-npm i react-hook-form
+> npm i react-hook-form
 ```
 
 - Usando o React Hook Form:
@@ -293,8 +293,8 @@ Documentação: https://github.com/colinhacks/zod.
 - Vamos rodar o comando seguinte para instalar e integrar o Zod ao React Hook Form:
 
 ```
-npm i zod
-npm i @hookform/resolvers
+> npm i zod
+> npm i @hookform/resolvers
 ```
 
 - Usando o Zod intregado ao React Hook Form para validar forms:
