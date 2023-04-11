@@ -1,7 +1,7 @@
 # DT Money
 
 <div align="center">
-  <img width="700" src="">
+  <img width="700" src="https://user-images.githubusercontent.com/86172286/231017284-847cfe45-329c-44a8-b0ac-05c4c5e9995e.gif">
 </div>
 
 ## Criando um projeto React com o Vite
@@ -250,7 +250,7 @@ Documentação: https://react-hook-form.com/.
 - Vamos instalar o React Hook Form com o comando seguinte:
 
 ```
-npm i react-hook-form
+> npm i react-hook-form
 ```
 
 - Usando o React Hook Form:
@@ -293,8 +293,8 @@ Documentação: https://github.com/colinhacks/zod.
 - Vamos rodar o comando seguinte para instalar e integrar o Zod ao React Hook Form:
 
 ```
-npm i zod
-npm i @hookform/resolvers
+> npm i zod
+> npm i @hookform/resolvers
 ```
 
 - Usando o Zod intregado ao React Hook Form para validar forms:
